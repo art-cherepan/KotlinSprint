@@ -9,7 +9,7 @@ fun main() {
 
     var employeeCount = 2000
     //println(employeeCount)
-    employeeCount--
+    employeeCount = 1999
 
     println(employeeCount)
 }
