@@ -8,25 +8,5 @@ fun main() {
     val minutes = (seconds % secondsPerHour) / minutesPerHour
     val secondRemainder = seconds % minutesPerHour
 
-    var strResult = ""
-
-    if (hours < 10) {
-        strResult += "0$hours:"
-    } else {
-        strResult += "$hours:"
-    }
-
-    if (minutes < 10) {
-        strResult += "0$minutes:"
-    } else {
-        strResult += "$minutes:"
-    }
-
-    if (secondRemainder < 10) {
-        strResult += "0$secondRemainder"
-    } else {
-        strResult += "$secondRemainder"
-    }
-
-    print(strResult)
+    println(String.format("%02d:%02d:%02d", hours, minutes, secondRemainder))
 }
