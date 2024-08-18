@@ -6,7 +6,9 @@ fun main() {
     val thirdStudentPoint = 3f
     val fourthStudentPoint = 5f
 
-    val arithmeticMean = (firstStudentPoint + secondStudentPoint + thirdStudentPoint + fourthStudentPoint) / 4
+    val studentCount = 4
+
+    val arithmeticMean = (firstStudentPoint + secondStudentPoint + thirdStudentPoint + fourthStudentPoint) / studentCount
 
     println(String.format("%.2f", arithmeticMean))
 }
