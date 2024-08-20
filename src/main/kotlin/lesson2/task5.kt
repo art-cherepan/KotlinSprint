@@ -8,7 +8,7 @@ fun main () {
     val depositTerm = 20
     val totalAmount = calculateTotalAmount(startCapital, annualInterestRate, depositTerm)
 
-    println("Итоговая сумма: %.3f".format(totalAmount)) //почему-то результат выводит через заяптую, а не через точку (дробная часть)
+    println("Итоговая сумма: %.3f".format(totalAmount))
 }
 
 fun calculateTotalAmount(startCapital: Int, annualInterestRate: Double, depositTerm: Int): Double {
