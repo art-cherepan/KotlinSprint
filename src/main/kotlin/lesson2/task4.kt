@@ -1,6 +1,6 @@
 package lesson2
 
-const val buffMaxPercent = 100
+const val BUFF_MAX_PERCENT = 100
 
 fun main() {
     val crystalOreWithoutBuffCount = 7
@@ -15,5 +15,5 @@ fun main() {
 }
 
 fun calculateBuff(oreCount: Int, buffPercent: Int): Int {
-    return (oreCount * buffPercent) / buffMaxPercent
+    return (oreCount * buffPercent) / BUFF_MAX_PERCENT
 }
