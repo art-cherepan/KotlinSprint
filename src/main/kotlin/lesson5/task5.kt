@@ -18,6 +18,7 @@ fun main() {
     }
 
     println(result)
+    println("Выйгрышные числа: $randomValues")
 }
 
 fun getUserValues(): List<Int>
