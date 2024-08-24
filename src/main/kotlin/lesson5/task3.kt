@@ -22,6 +22,8 @@ fun checkLucky(firstNumber: Int, secondNumber: Int) {
     } else {
         println("Неудача!")
     }
+
+    println("Для победы нужно было отгадать числа $FIRST_LUCKY_NUMBER и $SECOND_LUCKY_NUMBER")
 }
 
 const val FIRST_LUCKY_NUMBER = 8
