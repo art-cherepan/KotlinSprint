@@ -3,7 +3,9 @@ package lesson5
 import kotlin.random.Random
 
 fun main() {
-    val randomValues = List(3) { Random.nextInt(0, 5) }
+    val randomValues = List(LOTTERY_NUMBERS_COUNT) {
+        Random.nextInt(RANDOM_LOTTERY_VALUE_FROM, RANDOM_LOTTERY_VALUE_UNTIL)
+    }
     val userValues = getUserValues()
 
     val intersectValues = randomValues.intersect(userValues.toSet())
@@ -22,10 +24,16 @@ fun getUserValues(): List<Int>
 {
     val resultList = mutableListOf<Int>()
 
-    for (i in 1 .. 3) {
+    for (i in USER_INPUT_NUMBER_START .. USER_INPUT_NUMBER_END) {
         println("Введите $i число:")
         resultList.add(readln().toInt())
     }
 
     return resultList
 }
+
+const val RANDOM_LOTTERY_VALUE_FROM = 0
+const val RANDOM_LOTTERY_VALUE_UNTIL = 43
+const val LOTTERY_NUMBERS_COUNT = 3
+const val USER_INPUT_NUMBER_START = 1
+const val USER_INPUT_NUMBER_END = 3
