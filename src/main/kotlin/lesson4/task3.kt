@@ -24,5 +24,10 @@ fun isFavorableConditions(
 ): Boolean {
     val favorableTimesOfYear = setOf("весна", "лето", "осень")
 
-    return isSunnyWeather && isOpenAwning && airHumidity == 20 && favorableTimesOfYear.contains(timeOfYear)
+    return isSunnyWeather
+            && isOpenAwning
+            && airHumidity == FAVORABLE_AIR_HUMIDITY
+            && favorableTimesOfYear.contains(timeOfYear)
 }
+
+const val FAVORABLE_AIR_HUMIDITY = 20
