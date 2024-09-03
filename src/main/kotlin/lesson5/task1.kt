@@ -1,10 +1,8 @@
 package lesson5
 
-import kotlin.random.Random
-
 fun main() {
-    val firstNumber = Random.nextInt(RANDOM_NUMBER_FROM, RANDOM_NUMBER_UNTIL)
-    val secondNumber = Random.nextInt(RANDOM_NUMBER_FROM, RANDOM_NUMBER_UNTIL)
+    val firstNumber = (RANDOM_NUMBER_FROM..RANDOM_NUMBER_UNTIL).random()
+    val secondNumber = (RANDOM_NUMBER_FROM..RANDOM_NUMBER_UNTIL).random()
     val sum = firstNumber + secondNumber
 
     println("Чтобы подтвердит, что вы не бот, пожалуйста, введите сумму $firstNumber и $secondNumber:")
