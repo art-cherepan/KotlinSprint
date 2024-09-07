@@ -6,28 +6,16 @@ fun main() {
     val airHumidity = 20
     val timeOfYear = "зима"
 
-    val checkFavorableConditions = isFavorableConditions(
-        isSunnyWeather,
-        isOpenAwning,
-        airHumidity,
-        timeOfYear,
-    )
+    val isFavorableConditions =
+        (isSunnyWeather == IS_SUNNY_WEATHER) &&
+        (isOpenAwning == IS_OPEN_AWNING) &&
+        (airHumidity == AIR_HUMIDITY) &&
+        (timeOfYear != TIME_OF_YEAR)
 
-    println("Благоприятные ли условия сейчас для роста бобовых? $checkFavorableConditions")
+    println("Благоприятные ли условия сейчас для роста бобовых? $isFavorableConditions")
 }
 
-fun isFavorableConditions(
-    isSunnyWeather: Boolean,
-    isOpenAwning: Boolean,
-    airHumidity: Int,
-    timeOfYear: String,
-): Boolean {
-    val favorableTimesOfYear = setOf("весна", "лето", "осень")
-
-    return isSunnyWeather
-            && isOpenAwning
-            && airHumidity == FAVORABLE_AIR_HUMIDITY
-            && favorableTimesOfYear.contains(timeOfYear)
-}
-
-const val FAVORABLE_AIR_HUMIDITY = 20
+const val AIR_HUMIDITY = 20
+const val IS_SUNNY_WEATHER = true
+const val IS_OPEN_AWNING = true
+const val TIME_OF_YEAR = "зима"
