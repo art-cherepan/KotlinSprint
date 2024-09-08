@@ -20,6 +20,4 @@ fun main() {
 
 val LOGIN_PASSWORDS = mapOf(
     "Zaphod" to "PanGalactic",
-    "Droid" to "qwer123",
-    "Djambo" to "kokoko222",
 )
