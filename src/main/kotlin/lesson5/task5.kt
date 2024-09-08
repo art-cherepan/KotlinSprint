@@ -1,10 +1,8 @@
 package lesson5
 
-import kotlin.random.Random
-
 fun main() {
     val randomValues = List(LOTTERY_NUMBERS_COUNT) {
-        Random.nextInt(RANDOM_LOTTERY_VALUE_FROM, RANDOM_LOTTERY_VALUE_UNTIL)
+        (RANDOM_LOTTERY_VALUE_FROM .. RANDOM_LOTTERY_VALUE_UNTIL).random()
     }
     val userValues = getUserValues()
 
@@ -34,7 +32,7 @@ fun getUserValues(): List<Int>
 }
 
 const val RANDOM_LOTTERY_VALUE_FROM = 0
-const val RANDOM_LOTTERY_VALUE_UNTIL = 43
+const val RANDOM_LOTTERY_VALUE_UNTIL = 42
 const val LOTTERY_NUMBERS_COUNT = 3
 const val USER_INPUT_NUMBER_START = 1
 const val USER_INPUT_NUMBER_END = 3
