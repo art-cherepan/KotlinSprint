@@ -8,8 +8,10 @@ fun main() {
 
     while (counter > 0) {
         println("Осталось ${counter--} секунд(ы)")
-        Thread.sleep(1000)
+        Thread.sleep(COUNT_OF_MILLISECONDS)
     }
 
     println("Время вышло")
 }
+
+const val COUNT_OF_MILLISECONDS: Long = 1000
