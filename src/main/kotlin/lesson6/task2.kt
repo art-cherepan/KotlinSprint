@@ -6,11 +6,11 @@ fun main() {
     var counter = countOfSeconds
 
     while (counter > 0) {
-        Thread.sleep(COUNT_OF_MILLISECONDS)
+        Thread.sleep(MILLISECONDS_COUNT)
         --counter
     }
 
     println("Прошло $countOfSeconds секунд(ы)")
 }
 
-const val COUNT_OF_MILLISECONDS: Long = 1000
+const val MILLISECONDS_COUNT: Long = 1000
