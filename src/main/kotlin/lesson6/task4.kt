@@ -1,4 +1,4 @@
-package Lesson6
+package lesson6
 
 fun main() {
     val randomNumber = (START_RANDOM_NUMBER .. FINISH_RANDOM_NUMBER).random()

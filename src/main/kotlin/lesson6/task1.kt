@@ -1,4 +1,4 @@
-package Lesson6
+package lesson6
 
 fun main() {
     println("Введите ваш логин:")

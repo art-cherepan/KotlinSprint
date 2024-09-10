@@ -1,4 +1,4 @@
-package Lesson6
+package lesson6
 
 fun main() {
     var counter = COUNT_OF_ATTEMPTS
