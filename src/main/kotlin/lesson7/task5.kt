@@ -9,13 +9,8 @@ fun main() {
         password = ""
 
         for (i in START_INDEX..passwordLength) {
-            val checkSymbol = (START_INDEX..SYMBOL_TYPE_COUNT).random()
-
-            when (checkSymbol) {
-                1 -> password += (0..9).random()
-                2 -> password += ('a'..'z').random()
-                else -> password += ('A'..'Z').random()
-            }
+            val allChars = ('a'..'z') + ('A'..'Z') + ('0'..'9')
+            password += allChars.random()
         }
 
         var checkDigit = false
@@ -44,4 +39,3 @@ fun main() {
 }
 
 const val START_INDEX = 1
-const val SYMBOL_TYPE_COUNT = 3
