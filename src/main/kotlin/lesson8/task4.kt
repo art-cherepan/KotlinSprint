@@ -25,7 +25,9 @@ fun main() {
     println("Введите ингредиент:")
     val userIngredient = readln()
 
-    if (userIngredient !in ingredients) {
+    val swapIngredientIndex = ingredients.indexOf(userIngredient)
+
+    if (swapIngredientIndex == UNDEFINED_USER_INGREDIENT_INDEX) {
         println("Ингредиента $userIngredient нет в списке")
 
         return
@@ -34,7 +36,7 @@ fun main() {
     println("Введите ингредиент, на который нужно заменить:")
     val swapIngredient = readln()
 
-    ingredients[ingredients.indexOf(userIngredient)] = swapIngredient
+    ingredients[swapIngredientIndex] = swapIngredient
 
     println("Обновленный список ингредиентов:")
 
@@ -42,3 +44,5 @@ fun main() {
         println(ingredient)
     }
 }
+
+const val UNDEFINED_USER_INGREDIENT_INDEX = -1
