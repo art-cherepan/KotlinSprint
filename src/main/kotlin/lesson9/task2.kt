@@ -15,15 +15,18 @@ fun main() {
         println("Желаете добавить еще ? (да/нет)")
         val userChoose = readln()
 
-        if (userChoose == "да") {
+        if (userChoose.equals(POSITIVE_USER_ANSWER, true)) {
             println("Какой ингредиент вы хотите добавить?")
             val newIngredient = readln()
 
             ingredients.add(newIngredient)
         }
 
-    } while (userChoose != "нет")
+    } while (!userChoose.equals(NEGATIVE_USER_ANSWER, true))
 
     println("Теперь в рецепте есть следующие ингредиенты:")
     ingredients.forEach{ ingredient -> println(ingredient) }
 }
+
+const val POSITIVE_USER_ANSWER = "да"
+const val NEGATIVE_USER_ANSWER = "нет"
