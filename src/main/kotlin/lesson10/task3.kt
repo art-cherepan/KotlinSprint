@@ -8,11 +8,9 @@ fun main() {
 }
 
 fun generatePassword(passwordLength: Int): String {
-    val specSymbols: Array<Char> = arrayOf(
-        '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-', '.', '/', ' '
-    )
-
+    val specSymbols = ' ' .. '/'
     val digits = 0 .. 9
+
     val startIndex = 0
     var strPasswordResult = ""
 
