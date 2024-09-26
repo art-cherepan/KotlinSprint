@@ -1,15 +1,13 @@
 package lesson9
 
-import java.util.*
-
 fun main() {
     println("Введите ингредиенты по очереди:")
-    val userIngredients = MutableList<String?>(INGREDIENTS_COUNT) { readln() }
+    val userIngredients = MutableList(INGREDIENTS_COUNT) { readln() }
 
     userIngredients.sortBy { it }
 
     val userIngredientsToString = userIngredients.toSet().joinToString(separator = ", ")
-    val sortedUserIngredientsCapitalize = userIngredientsToString.replaceFirstChar { it.titlecase(Locale.getDefault()) }
+    val sortedUserIngredientsCapitalize = userIngredientsToString.replaceFirstChar { it.uppercase() }
 
     println(sortedUserIngredientsCapitalize)
 }
