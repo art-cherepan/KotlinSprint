@@ -1,24 +1,17 @@
 package lesson12.task3
 
 fun main() {
-    val newNewWeather = NewNewWeather(290, 280, true)
+    val newNewWeather = WeatherTask3(290, 280, true)
     newNewWeather.printWeatherData()
 }
 
-class NewNewWeather() {
-    private var daytimeTemperature = 10
-    private var nightTimeTemperature = 5
-    private var precipitationDuringDay = false
-
-    constructor(
-        daytimeTemperature: Int,
-        nightTimeTemperature: Int,
-        precipitationDuringDay: Boolean,
-    ) : this() {
-        this.daytimeTemperature = (daytimeTemperature - TRIPLE_POINT_TEMPERATURE_OF_WATER).toInt()
-        this.nightTimeTemperature = (nightTimeTemperature - TRIPLE_POINT_TEMPERATURE_OF_WATER).toInt()
-        this.precipitationDuringDay = precipitationDuringDay
-    }
+class WeatherTask3(
+    daytimeTemperature: Int,
+    nightTimeTemperature: Int,
+    private val precipitationDuringDay: Boolean,
+) {
+    private val daytimeTemperature = (daytimeTemperature - TRIPLE_POINT_TEMPERATURE_OF_WATER).toInt()
+    private val nightTimeTemperature = (nightTimeTemperature - TRIPLE_POINT_TEMPERATURE_OF_WATER).toInt()
 
     fun printWeatherData() {
         println("""
