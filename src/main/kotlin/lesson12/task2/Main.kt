@@ -1,7 +1,7 @@
 package lesson12.task2
 
 fun main () {
-    val newWeather = NewWeather(
+    val newWeather = WeatherTask2(
         daytimeTemperature = 10,
         nightTimeTemperature = 6,
         precipitationDuringDay = false,
@@ -10,7 +10,7 @@ fun main () {
     newWeather.printWeatherData()
 }
 
-class NewWeather (
+class WeatherTask2 (
     private var daytimeTemperature: Int,
     private var nightTimeTemperature: Int,
     private var precipitationDuringDay: Boolean,
