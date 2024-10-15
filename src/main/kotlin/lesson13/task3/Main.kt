@@ -2,7 +2,6 @@ package lesson13.task3
 
 fun main() {
     val contactList: MutableList<PhoneBookTask3> = mutableListOf()
-    val companyList: MutableList<String> = mutableListOf()
 
     contactList.add(
         PhoneBookTask3(
@@ -42,11 +41,7 @@ fun main() {
         )
     )
 
-    contactList.forEach {
-        if (it.getCompany() != null) {          //наверное, есть более "элегантное" решение
-            companyList.add(it.getCompany()!!)
-        }
-    }
+    val companyList: List<String> = contactList.mapNotNull { it.getCompany() }
 
     companyList.forEach { println(it) }
 }
