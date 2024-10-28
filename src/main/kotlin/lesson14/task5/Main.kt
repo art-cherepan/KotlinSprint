@@ -19,53 +19,43 @@ fun main() {
     val chat = Chat()
 
     chat.addMessage(
-        Message(
-            id = 1,
-            author = John,
-            text = "Hi, all! Do you think Kotlin is a difficult language?"
-        )
+        author = John,
+        text = "Hi, all! Do you think Kotlin is a difficult language?",
+    )
+
+    var lastParenMessageId: Int = chat.getLastMessageId()
+
+    chat.addThreadMessage(
+        author = Vicky,
+        text = "Hi, bro! I think the barrier to entry is quite high for beginners",
+        parentMessageId = lastParenMessageId,
     )
 
     chat.addThreadMessage(
-        ChildMessage(
-            id = 1,
-            author = Vicky,
-            text = "Hi, bro! I think the barrier to entry is quite high for beginners",
-            parentMessageId = 1,
-        )
+        author = Maggy,
+        text = "Hello! I agree with Vicky. But I think if you have experience in another language, it will be easier",
+        parentMessageId = lastParenMessageId,
     )
 
-    chat.addThreadMessage(
-        ChildMessage(
-            id = 2,
-            author = Maggy,
-            text = "Hello! I agree with Vicky. But I think if you have experience in another language, it will be easier",
-            parentMessageId = 1,
-        )
-    )
     chat.addMessage(
-        Message(
-            id = 2,
-            author = Vicky,
-            text = "What do you think about Java?",
-        )
+        author = Vicky,
+        text = "What do you think about Java?",
     )
+
+    lastParenMessageId = chat.getLastMessageId()
+
     chat.addThreadMessage(
-        ChildMessage(
-            id = 3,
-            author = Maggy,
-            text = "I think it's even more difficult than Kotlin",
-            parentMessageId = 2,
-        )
+        author = Maggy,
+        text = "I think it's even more difficult than Kotlin",
+        parentMessageId = lastParenMessageId,
     )
+
     chat.addThreadMessage(
-        ChildMessage(
-            id = 4,
-            author = John,
-            text = "I agree with Maggy",
-            parentMessageId = 2,
-        )
+        author = John,
+        text = "I agree with Maggy",
+        parentMessageId = lastParenMessageId,
     )
+
     chat.printChat()
 }
 
@@ -117,13 +107,34 @@ class ChildMessage(
 
 class Chat(
     private val messageList: MutableList<Message> = mutableListOf(),
+    private var lastMessageId: Int = 0,
 ) {
-    fun addMessage(message: Message) {
-        messageList.add(message)
+    fun addMessage(
+        text: String,
+        author: Author,
+    ) {
+        messageList.add(
+            Message(
+                id = ++lastMessageId,
+                text = text,
+                author = author,
+            )
+        )
     }
 
-    fun addThreadMessage(childMessage: ChildMessage) {
-        messageList.add(childMessage)
+    fun addThreadMessage(
+        text: String,
+        author: Author,
+        parentMessageId: Int,
+    ) {
+        messageList.add(
+            ChildMessage(
+                id = ++lastMessageId,
+                text = text,
+                author = author,
+                parentMessageId = parentMessageId,
+            )
+        )
     }
 
     fun getMessageList(): List<Message> {
@@ -146,5 +157,9 @@ class Chat(
                 }
             }
         }
+    }
+
+    fun getLastMessageId(): Int {
+        return lastMessageId
     }
 }
