@@ -55,10 +55,12 @@ class Instrument(
     override val price: Double,
     override val quantityInStock: Int,
     val type: String,
-) : Product(), Findable
-
-interface Findable {
-    fun findAccessories() {
+) : Product(), Findable {
+    override fun findAccessories() {
         println("Выполняется поиск")
     }
+}
+
+interface Findable {
+    fun findAccessories()
 }
