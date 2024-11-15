@@ -2,6 +2,8 @@ package lesson16.task2
 
 import kotlin.math.pow
 
+private const val PI = 3.14
+
 fun main() {
     val circle = Circle(radius = 42.0)
 
@@ -10,8 +12,6 @@ fun main() {
 }
 
 class Circle(private val radius: Double) {
-    val PI: Double = 3.14
-
     fun getCircumference(): Double {
         return 2 * PI * radius
     }
