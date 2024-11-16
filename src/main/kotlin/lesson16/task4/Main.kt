@@ -7,7 +7,7 @@ fun main() {
     )
 
     println("Статус заказа: ${order.getOrderStatus().name}")
-    order.setOrderStatus(OrderStatus.AT_WORK)
+    order.takeNewOrderStatus(OrderStatus.AT_WORK)
     println("Статус заказа: ${order.getOrderStatus().name}")
 }
 
@@ -15,15 +15,19 @@ class Order(
     private val orderNumber: String,
     private var orderStatus: OrderStatus,
 ) {
-    public fun getOrderNumber(): String {
+    fun getOrderNumber(): String {
         return orderNumber
     }
 
-    public fun getOrderStatus(): OrderStatus {
+    fun getOrderStatus(): OrderStatus {
         return orderStatus
     }
 
-    public fun setOrderStatus(_orderStatus: OrderStatus) {
+    fun takeNewOrderStatus(_orderStatus: OrderStatus) {
+        setOrderStatus(_orderStatus)
+    }
+
+    private fun setOrderStatus(_orderStatus: OrderStatus) {
         orderStatus = _orderStatus
     }
 }
