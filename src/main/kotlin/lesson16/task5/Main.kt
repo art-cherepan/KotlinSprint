@@ -31,19 +31,22 @@ class Player(
     private val name: String,
     private var impactForce: Double,
     private var health: Double,
+    private var isDeath: Boolean = false,
 ) {
-    private var opportunityToBeTreated: Boolean = true
-
     fun takeDamage(amountOfDamage: Double) {
+        if (isDeath) {
+            return
+        }
+
         health -= amountOfDamage
 
-        if (health < 0) {
+        if (health <= 0) {
             occurrenceOfDeath()
         }
     }
 
     fun increaseHealth(healthGain: Double) {
-        if (opportunityToBeTreated) {
+        if (!isDeath) {
             health += healthGain
         }
     }
@@ -59,6 +62,6 @@ class Player(
     private fun occurrenceOfDeath() {
         impactForce = 0.0
         health = 0.0
-        opportunityToBeTreated = false
+        isDeath = true
     }
 }
