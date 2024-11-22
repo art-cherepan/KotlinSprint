@@ -23,7 +23,7 @@ class Folder(
     var name = name
         get() {
             if (isSecret) {
-                return "Секретно"
+                return "скрытая папка"
             }
 
             return field
