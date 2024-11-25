@@ -21,8 +21,7 @@ class User(login: String, password: String) {
 
     var password = password
         get() {
-            val regex = ".".toRegex()
-            return field.replace(regex, "*")
+            return "*".repeat(field.length)
         }
 
         set(value) {
