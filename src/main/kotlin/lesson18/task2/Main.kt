@@ -13,24 +13,14 @@ fun main() {
     diceList.forEach { it.diceRoll() }
 }
 
-abstract class Dice {
-    abstract fun diceRoll()
-}
-
-class SquareDice : Dice() {
-    override fun diceRoll() {
-        println((1 .. 4).random())
+abstract class Dice(private val numberOfSides: Int) {
+    fun diceRoll() {
+        println((1..numberOfSides).random())
     }
 }
 
-class HexagonalDice : Dice() {
-    override fun diceRoll() {
-        println((1 .. 6).random())
-    }
-}
+class SquareDice : Dice(numberOfSides = 4)
 
-class OctagonalDice : Dice() {
-    override fun diceRoll() {
-        println((1 .. 8).random())
-    }
-}
+class HexagonalDice : Dice(numberOfSides = 6)
+
+class OctagonalDice : Dice(numberOfSides = 8)
