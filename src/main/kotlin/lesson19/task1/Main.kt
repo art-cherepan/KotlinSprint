@@ -1,7 +1,7 @@
 package lesson19.task1
 
 fun main() {
-    println("В свой аквариум вы можете добавит следующих рыб:")
+    println("В свой аквариум вы можете добавить следующих рыб:")
 
     for (fish in FishTypes.entries) {
         println(fish.getName())
