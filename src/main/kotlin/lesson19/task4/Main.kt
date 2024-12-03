@@ -10,9 +10,9 @@ fun main() {
     tank.shoot()
 }
 
-class Tank {
-    private var cartridgeType: Cartridge? = null
-
+class Tank (
+    private var cartridgeType: Cartridge? = null,
+) {
     fun setCartridgeType(cartridge: Cartridge) {
         cartridgeType = cartridge
     }
