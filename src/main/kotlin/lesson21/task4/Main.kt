@@ -7,9 +7,9 @@ import java.util.*
 fun main() {
     val path = Paths.get("").toAbsolutePath().toString() + "/test.txt"
     val file = File(path)
-    file.customWrite("Привет", path)
+    file.customWrite("Привет")
 }
 
-fun File.customWrite(text: String, path: String) {
-    File(path).writeText(text.lowercase(Locale.getDefault()))
+fun File.customWrite(text: String) {
+    this.writeText(text.lowercase(Locale.getDefault()))
 }
