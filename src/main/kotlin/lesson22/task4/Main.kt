@@ -1,18 +1,16 @@
 package lesson22.task4
 
 fun main() {
-    val mainScreenViewModel = MainScreenViewModel(
-        mainScreenState = MainScreenState(
-            data = "",
-        )
-    )
+    val mainScreenViewModel = MainScreenViewModel()
 
     mainScreenViewModel.loadData()
 }
 
-class MainScreenViewModel(
-    private var mainScreenState: MainScreenState,
-) {
+class MainScreenViewModel {
+    private var mainScreenState = MainScreenState(
+        data = ""
+    )
+
     fun loadData() {
         mainScreenState = MainScreenState(
             data = "",
@@ -25,9 +23,9 @@ class MainScreenViewModel(
         newMainScreenState = mainScreenState.copy(isLoading = true)
         mainScreenState = newMainScreenState
     }
-}
 
-data class MainScreenState(
-    val data: String,
-    val isLoading: Boolean = false,
-)
+    data class MainScreenState(
+        val data: String,
+        val isLoading: Boolean = false,
+    )
+}
