@@ -8,7 +8,10 @@ fun main() {
         distanceToEarth = 4.367,
     )
 
-    val (placeOrEventName, placeOrEventDescription, eventDateTime, distanceToEarth) = alphaCentauri
+    val placeOrEventName = alphaCentauri.component1()
+    val placeOrEventDescription = alphaCentauri.component2()
+    val eventDateTime = alphaCentauri.component3()
+    val distanceToEarth = alphaCentauri.component4()
 
     println("""
         Место: $placeOrEventName
